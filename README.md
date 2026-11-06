@@ -8,11 +8,11 @@
 </p>
 
 <p align="center">
-  <a href="https://huggingface.co/jdominick05"><img src="https://img.shields.io/badge/Hugging%20Face-jdominick05-60a5fa?style=flat-square&labelColor=121a33&logo=huggingface&logoColor=white" alt="Hugging Face: jdominick05"></a>
-  <a href="https://pypi.org/project/caminus/"><img src="https://img.shields.io/badge/PyPI-caminus-2dd4bf?style=flat-square&labelColor=121a33&logo=pypi&logoColor=white" alt="PyPI: caminus"></a>
-  <a href="mailto:j.dominick2005@proton.me"><img src="https://img.shields.io/badge/email-j.dominick2005%40proton.me-a78bfa?style=flat-square&labelColor=121a33&logo=protonmail&logoColor=white" alt="email: j.dominick2005@proton.me"></a>
-  <img src="https://img.shields.io/badge/Discord-exalted__._-7c8cf8?style=flat-square&labelColor=121a33&logo=discord&logoColor=white" alt="Discord: exalted_._">
-  <img src="https://img.shields.io/badge/based%20in-Maryland-93a7d1?style=flat-square&labelColor=121a33" alt="based in Maryland">
+  <a href="https://huggingface.co/jdominick05"><img src="https://img.shields.io/badge/Hugging%20Face-jdominick05-ffb547?style=flat-square&labelColor=1b1e24&logo=huggingface&logoColor=white" alt="Hugging Face: jdominick05"></a>
+  <a href="https://pypi.org/project/caminus/"><img src="https://img.shields.io/badge/PyPI-caminus-ffb547?style=flat-square&labelColor=1b1e24&logo=pypi&logoColor=white" alt="PyPI: caminus"></a>
+  <a href="mailto:j.dominick2005@proton.me"><img src="https://img.shields.io/badge/email-j.dominick2005%40proton.me-ffb547?style=flat-square&labelColor=1b1e24&logo=protonmail&logoColor=white" alt="email: j.dominick2005@proton.me"></a>
+  <img src="https://img.shields.io/badge/Discord-exalted__._-ffb547?style=flat-square&labelColor=1b1e24&logo=discord&logoColor=white" alt="Discord: exalted_._">
+  <img src="https://img.shields.io/badge/based%20in-Maryland-8b8f98?style=flat-square&labelColor=1b1e24" alt="based in Maryland">
 </p>
 
 ## About me
@@ -29,11 +29,11 @@
 
 | Project | What it is | Headline |
 |---|---|---|
-| [**Caminus**](https://github.com/jdominick05/caminus) | An inference engine written for two RDNA3 GPUs from the kernel up. It serves the Qwen3.8-Flash-Next Coder to Qwen Code, Claude Code and other harnesses over OpenAI- and Anthropic-compatible APIs. | About **104 tok/s**, **123–203 tok/s** with DFlash drafting: about twice llama.cpp on the same two cards. <br><a href="https://pypi.org/project/caminus/"><img src="https://img.shields.io/pypi/v/caminus?style=flat-square&labelColor=121a33&color=2dd4bf&label=pip%20install%20caminus" alt="PyPI version"></a> |
+| [**Caminus**](https://github.com/jdominick05/caminus) | An inference engine written for two RDNA3 GPUs from the kernel up. It serves the Qwen3.8-Flash-Next Coder to Qwen Code, Claude Code and other harnesses over OpenAI- and Anthropic-compatible APIs. | About **104 tok/s**, **123–203 tok/s** with DFlash drafting: about twice llama.cpp on the same two cards. <br><a href="https://pypi.org/project/caminus/"><img src="https://img.shields.io/pypi/v/caminus?style=flat-square&labelColor=1b1e24&color=ffb547&label=pip%20install%20caminus" alt="PyPI version"></a> |
 | [**ignite‑llama**](https://github.com/jdominick05/ignite-llama) | My llama.cpp fork, tuned for Qwen3.8 Flash-Next decode on RDNA3 (ROCm/HIP). | **58.7 tok/s** against 36.3 with stock llama.cpp kernels (RX 7900 XTX + 7900 XT). |
-| [**Flash-Next REAP-288 GGUF**](https://huggingface.co/jdominick05/Qwen3.8-Flash-Next-REAP-288-44GB-262k-GGUF) | A 288-expert prune of Qwen3.8 Flash-Next, quantized to run its full 262k context on 24 + 20 GB of VRAM. | <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fmodels%2Fjdominick05%2FQwen3.8-Flash-Next-REAP-288-44GB-262k-GGUF&query=%24.downloads&label=downloads%2Fmonth&color=60a5fa&style=flat-square&labelColor=121a33&logo=huggingface&logoColor=white" alt="Hugging Face downloads last month"> |
-| [**Qwen3.8-27B GGUF**](https://huggingface.co/jdominick05/Qwen3.8-27B-24GB-262k-GGUF) | Mixed-precision quants that fit the full 262,144-token context on a single 24 GB GPU. | <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fmodels%2Fjdominick05%2FQwen3.8-27B-24GB-262k-GGUF&query=%24.downloads&label=downloads%2Fmonth&color=60a5fa&style=flat-square&labelColor=121a33&logo=huggingface&logoColor=white" alt="Hugging Face downloads last month"> |
-| [**llm‑top**](https://github.com/jdominick05/llm-top) | `top` for your local LLM: a live terminal dashboard for llama-server or LM Studio, and the Qwen Code agents using it. Written in Go. | <a href="https://github.com/jdominick05/llm-top/releases/latest"><img src="https://img.shields.io/github/v/release/jdominick05/llm-top?style=flat-square&labelColor=121a33&color=a78bfa" alt="latest release"></a> |
+| [**Flash-Next REAP-288 GGUF**](https://huggingface.co/jdominick05/Qwen3.8-Flash-Next-REAP-288-44GB-262k-GGUF) | A 288-expert prune of Qwen3.8 Flash-Next, quantized to run its full 262k context on 24 + 20 GB of VRAM. | <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fmodels%2Fjdominick05%2FQwen3.8-Flash-Next-REAP-288-44GB-262k-GGUF&query=%24.downloads&label=downloads%2Fmonth&color=ffb547&style=flat-square&labelColor=1b1e24&logo=huggingface&logoColor=white" alt="Hugging Face downloads last month"> |
+| [**Qwen3.8-27B GGUF**](https://huggingface.co/jdominick05/Qwen3.8-27B-24GB-262k-GGUF) | Mixed-precision quants that fit the full 262,144-token context on a single 24 GB GPU. | <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fmodels%2Fjdominick05%2FQwen3.8-27B-24GB-262k-GGUF&query=%24.downloads&label=downloads%2Fmonth&color=ffb547&style=flat-square&labelColor=1b1e24&logo=huggingface&logoColor=white" alt="Hugging Face downloads last month"> |
+| [**llm‑top**](https://github.com/jdominick05/llm-top) | `top` for your local LLM: a live terminal dashboard for llama-server or LM Studio, and the Qwen Code agents using it. Written in Go. | <a href="https://github.com/jdominick05/llm-top/releases/latest"><img src="https://img.shields.io/github/v/release/jdominick05/llm-top?style=flat-square&labelColor=1b1e24&color=ffb547" alt="latest release"></a> |
 
 ### AI on the Ryzen AI NPU
 
@@ -56,4 +56,4 @@
 - **Radio:** Ubertooth One
 - **Agents:** Claude Code, Qwen Code
 
-<p align="center"><sub>The banner is a 2.4 GHz band as an analyzer draws it: Wi-Fi channels 1, 6 and 11, and the three Bluetooth LE advertising channels.</sub></p>
+<p align="center"><sub>Every number on this page comes from the linked repo or model card.</sub></p>

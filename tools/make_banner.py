@@ -236,7 +236,11 @@ def terminal(F, static=False):
         ("$ ", "cat focus.txt", 26, 400, 232),
         ("", TAGLINE, 24, 400, 272),
     ]
+    # The resting state is the finished terminal: every attribute's base value shows the full text, so a
+    # viewer that never runs the animation (link previews, some apps) still reads the whole banner. When it
+    # does run, each line's clip starts at width 0 from t=0 and types out on its own schedule.
     out = []
+    shaped = []
     t = 0.4
     for i, (prompt, text, size, wght, y) in enumerate(lines):
         x = 56
@@ -245,30 +249,33 @@ def terminal(F, static=False):
             out.append(f'<path d="{pd}" fill="{amber}"/>')
             x += pw
         d, w = text_path(mono, text, size, x, y, wght=wght)
+        per = 0.055 if size < 40 else 0.07
+        shaped.append((i, text, size, y, x, d, w, t, per))
+        t += len(text) * per + (0.5 if prompt else 0.25)
+    t_end = t
+    total = t_end + 0.1
+    for i, text, size, y, x, d, w, start, per in shaped:
         color = ink if i != 3 else "#c7cbd3"
         if static:
             out.append(f'<path d="{d}" fill="{color}"/>')
-        else:
-            chars = len(text)
-            per = 0.055 if size < 40 else 0.07
-            dur = chars * per
-            vals = ";".join(rnd(w * k / chars) for k in range(chars + 1))
-            out.append(
-                f'<clipPath id="c{i}"><rect x="{rnd(x)}" y="{y - size}" width="0" height="{size * 1.4}">'
-                f'<animate attributeName="width" values="{vals}" dur="{rnd(dur)}s" begin="{rnd(t)}s" fill="freeze" calcMode="discrete"/>'
-                f"</rect></clipPath>"
-                f'<path d="{d}" fill="{color}" clip-path="url(#c{i})"/>'
-            )
-            t += dur + (0.5 if prompt else 0.25)
+            continue
+        chars = len(text)
+        vals = ";".join(rnd(w * k / chars) for k in range(chars + 1))
+        keys = ";".join(["0"] + [f"{(start + k * per) / total:.4f}" for k in range(1, chars + 1)])
+        out.append(
+            f'<clipPath id="c{i}"><rect x="{rnd(x)}" y="{y - size}" width="{rnd(w + 2)}" height="{size * 1.4}">'
+            f'<animate attributeName="width" values="{vals}" keyTimes="{keys}" dur="{rnd(total)}s" fill="freeze" calcMode="discrete"/>'
+            f"</rect></clipPath>"
+            f'<path d="{d}" fill="{color}" clip-path="url(#c{i})"/>'
+        )
     cur_y = 272
     _, tw = text_path(mono, TAGLINE, 24, 56, cur_y, wght=400)
     cursor_anim = "" if static else (
-        f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1.06s" begin="{rnd(t)}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="opacity" values="0;1" keyTimes="0;{t_end / total:.4f}" dur="{rnd(total)}s" fill="freeze" calcMode="discrete"/>'
+        f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1.06s" begin="{rnd(t_end)}s" repeatCount="indefinite"/>'
     )
-    cursor_vis = "1" if static else "0"
     cursor = (
-        f'<rect x="{rnd(56 + tw + 10)}" y="{cur_y - 22}" width="13" height="27" fill="{amber}" opacity="{cursor_vis}">'
-        + ("" if static else f'<set attributeName="opacity" to="1" begin="{rnd(t - 0.01)}s"/>')
+        f'<rect x="{rnd(56 + tw + 10)}" y="{cur_y - 22}" width="13" height="27" fill="{amber}">'
         + cursor_anim
         + "</rect>"
     )
